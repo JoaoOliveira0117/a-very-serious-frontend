@@ -1,8 +1,12 @@
+import Home from "./pages/home";
+import ThemeLoader from "./theme/themeLoader";
+
 function App() {
   return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
+    <>
+      <ThemeLoader />
+      <Home />
+    </>
   );
 }
 
