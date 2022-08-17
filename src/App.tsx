@@ -1,11 +1,18 @@
-import Home from "./pages/home";
 import ThemeLoader from "./theme/themeLoader";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import routes from "./routes";
 
 function App() {
   return (
     <>
       <ThemeLoader />
-      <Home />
+      <BrowserRouter>
+        <Routes>
+          {routes.map(({ path, component: Component, isPrivate = false }) => (
+            <Route path={path} element={<Component />} />
+          ))}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

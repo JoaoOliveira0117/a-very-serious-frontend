@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import Header from "../header";
+import Container from "../Container";
+import Header from "../Header";
+import LinkButton from "../LinkButton";
 import styles from "./navbar.module.sass";
 
 export default function Navbar() {
@@ -25,7 +27,16 @@ export default function Navbar() {
       <nav
         className={`${styles.navbar} ${isSticky ? styles.navbarSticky : ""} `}
       >
-        {isSticky && <h1>Welcome.</h1>}
+        <Container>
+          <>
+            {isSticky && (
+              <section className={styles.navbarContent}>
+                <span>A very serious frontend</span>
+                <LinkButton to={"/login"}>Login</LinkButton>
+              </section>
+            )}
+          </>
+        </Container>
       </nav>
     </>
   );
