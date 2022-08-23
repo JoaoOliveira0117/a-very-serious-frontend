@@ -1,13 +1,13 @@
+import { AiOutlineLeft } from "react-icons/ai";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 import HomepageSection from "../../components/HomepageSection";
 import Input from "../../components/Input";
 import Link from "../../components/Link";
-import styles from "./login.module.sass";
-import { AiOutlineLeft } from "react-icons/ai";
 import LinkButton from "../../components/LinkButton";
+import styles from "./register.module.sass";
 
-function Login() {
+function Register() {
   return (
     <HomepageSection colored={true}>
       <>
@@ -18,8 +18,9 @@ function Login() {
         </div>
         <Card>
           <>
-            <h3 className={styles.title}>Login</h3>
+            <h3 className={styles.title}>Register</h3>
             <form>
+              <Input type="email" label="Email" name="email" id="email" />
               <Input
                 type="text"
                 label="Username"
@@ -33,7 +34,7 @@ function Login() {
                 id="password"
               />
               <p>
-                Dont have an account? <Link to="/register">Register.</Link>
+                Already have an account? <Link to="/login">Login.</Link>
               </p>
               <Button>Submit</Button>
             </form>
@@ -44,4 +45,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
