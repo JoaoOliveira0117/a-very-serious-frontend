@@ -1,6 +1,5 @@
 import Home from "./pages/home";
 import Login from "./pages/login";
-import Register from "./pages/register";
 
 type routesType = {
   path: string;
@@ -18,11 +17,6 @@ const routes: routesType[] = [
   {
     path: "/login",
     component: Login,
-    exact: true,
-  },
-  {
-    path: "/register",
-    component: Register,
     exact: true,
   },
 ];

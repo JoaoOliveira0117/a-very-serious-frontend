@@ -1,13 +1,15 @@
-import Button from "../../components/Button";
+import { useState } from "react";
+import { AiOutlineLeft } from "react-icons/ai";
 import Card from "../../components/Card";
 import HomepageSection from "../../components/HomepageSection";
-import Input from "../../components/Input";
-import Link from "../../components/Link";
-import styles from "./login.module.sass";
-import { AiOutlineLeft } from "react-icons/ai";
 import LinkButton from "../../components/LinkButton";
+import LoginCard from "./components/LoginCard";
+import RegisterCard from "./components/RegisterCard";
+import styles from './login.module.sass';
 
 function Login() {
+  const [card, setCard] = useState<'login' | 'register'>('login');
+
   return (
     <HomepageSection colored={true}>
       <>
@@ -17,27 +19,12 @@ function Login() {
           </LinkButton>
         </div>
         <Card>
-          <>
-            <h3 className={styles.title}>Login</h3>
-            <form>
-              <Input
-                type="text"
-                label="Username"
-                name="username"
-                id="username"
-              />
-              <Input
-                type="password"
-                label="Password"
-                name="password"
-                id="password"
-              />
-              <p>
-                Dont have an account? <Link to="/register">Register.</Link>
-              </p>
-              <Button>Submit</Button>
-            </form>
-          </>
+          <div className={styles.cardContent}>
+            { card === 'login' ? 
+              <LoginCard setCard={setCard}/> :
+              <RegisterCard setCard={setCard}/> 
+            }
+          </div>
         </Card>
       </>
     </HomepageSection>

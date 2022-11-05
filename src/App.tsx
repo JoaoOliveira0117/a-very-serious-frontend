@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {routes.map(({ path, component: Component, isPrivate = false }) => (
-            <Route path={path} element={<Component />} />
+            <Route key={path} path={path} element={<Component />} />
           ))}
         </Routes>
       </BrowserRouter>
